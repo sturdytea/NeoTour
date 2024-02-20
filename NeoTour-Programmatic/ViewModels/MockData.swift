@@ -30,12 +30,9 @@ struct MockData {
 
     private let recommended: ListSection = {
         .recommended([
-            .init(name: "Mount Fuji", image: "mount-fuji"),
-            .init(name: "Mount Fuji", image: "mount-fuji"),
-            .init(name: "Mount Fuji", image: "mount-fuji"),
-            .init(name: "Mount Fuji", image: "mount-fuji"),
-            .init(name: "Mount Fuji", image: "mount-fuji"),
-            .init(name: "Mount Fuji", image: "mount-fuji"),
+            .init(name: "Mount1 Fuji", image: "mount-fuji"),
+            .init(name: "Mount2 Fuji", image: "onboarding"),
+            .init(name: "Mount3 Fuji", image: "mount-fuji"),
         ])
     }()
 

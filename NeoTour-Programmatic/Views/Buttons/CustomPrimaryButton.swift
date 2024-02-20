@@ -19,7 +19,7 @@ class CustomPrimaryButton: UIButton {
         setTitleColor(.white, for: .normal)
         tintColor = .white
     
-        titleLabel?.font = UIFont(name: "SF-Pro-Display-Medium", size: 18.0) // TODO: Establish fonts
+        titleLabel?.font = UIFont(name: "SFProDisplay-Medium", size: 18.0)
         
         contentHorizontalAlignment = .center
         

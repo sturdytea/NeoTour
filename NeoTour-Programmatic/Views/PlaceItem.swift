@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct PlaceItem {
+    let title: String
+    let image: String
+}

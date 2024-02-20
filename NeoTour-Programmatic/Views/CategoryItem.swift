@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct CategoryItem {
+    let name: String
+}
