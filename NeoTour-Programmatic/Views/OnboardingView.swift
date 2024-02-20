@@ -24,6 +24,7 @@ class OnboardingView: UIView {
         configureImage()
         configureLabels()
         configureButton()
+        setupConstraints()
     }
     
     func configureImage() {
@@ -31,13 +32,6 @@ class OnboardingView: UIView {
         image.image = UIImage(named: "onboarding")
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
-        
-        NSLayoutConstraint.activate([
-            image.centerXAnchor.constraint(equalTo: centerXAnchor),
-            image.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
-            image.widthAnchor.constraint(equalToConstant: 393),
-            image.topAnchor.constraint(equalTo: topAnchor, constant: -15)
-        ])
     }
     
     func configureLabels() {
@@ -45,7 +39,7 @@ class OnboardingView: UIView {
         addSubview(titleLabel)
         titleLabel.text = "Winter\nVacation Trips"
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont(name: "SF-Pro-Display-Heavy", size: 40) // TODO: Establish fonts
+        titleLabel.font = UIFont(name: "SFProDisplay-Heavy", size: 40)
         
         titleLabel.numberOfLines = 0
         
@@ -53,7 +47,7 @@ class OnboardingView: UIView {
         addSubview(descriptionLabel)
         descriptionLabel.text = "Enjoy your winter vacations with warmth \nand amazing sightseeing on the mountains.\nEnjoy the best experience with us!"
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.font = UIFont(name: "SF-Pro-Display-Medium", size: 16) // TODO: Establish fonts
+        descriptionLabel.font = UIFont(name: "SFProDisplay-Medium", size: 16)
         descriptionLabel.numberOfLines = 0
         
         let paragraphStyle = NSMutableParagraphStyle()
@@ -64,28 +58,37 @@ class OnboardingView: UIView {
         ])
         
         descriptionLabel.attributedText = attributedString
-        
-        NSLayoutConstraint.activate([
-            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            titleLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 25),     descriptionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            descriptionLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20)
-        ])
     }
     
     func configureButton() {
         addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Let's Go!", for: .normal)
-        
-        NSLayoutConstraint.activate([
-            button.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            button.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 47)
-        ])
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension OnboardingView {
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            image.centerXAnchor.constraint(equalTo: centerXAnchor),
+            image.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            image.widthAnchor.constraint(equalToConstant: 393),
+            image.topAnchor.constraint(equalTo: topAnchor, constant: -15),
+            
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            titleLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 25),
+            
+            descriptionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            descriptionLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            
+            button.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            button.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 47)
+        ])
     }
 }
