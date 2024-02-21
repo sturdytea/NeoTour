@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PlaceSelectionDelegate {
+    func didPlaceChoice(at index: Int)
+}
+
 class MainView: UIView {
     
     private let collectionView: UICollectionView = {
@@ -21,6 +25,7 @@ class MainView: UIView {
     }()
     
     private let sections = MockData.shared.pageData
+    var selectionDelegate: PlaceSelectionDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,6 +53,13 @@ class MainView: UIView {
     private func setDelegates() {
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    
+    @objc func placeDetails(sender: UIButton) {
+        _ = IndexPath(row: sender.tag, section: 0)
+        let placeViewController = PlaceViewController()
+//        selectionDelegate?.didPlaceChoice(at: tag)
+        self.window?.rootViewController?.show(placeViewController, sender: self)
     }
     
     required init?(coder: NSCoder) {
@@ -203,6 +215,9 @@ extension MainView: UICollectionViewDataSource {
                 return UICollectionViewCell()
             }
             cell.configureCell(imageName: place[indexPath.row].image, title: place[indexPath.row].name)
+            cell.image.tag = indexPath.row
+            cell.image.addTarget(self, action: #selector(placeDetails), for: .touchUpInside)
+            
             return cell
             
         case .recommended(let recommended):

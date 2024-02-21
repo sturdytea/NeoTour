@@ -9,7 +9,7 @@ import UIKit
 
 class PlaceCollectionViewCell: UICollectionViewCell {
     
-    private let image: UIButton = {
+    let image: UIButton = {
         let button = UIButton()
         
         button.contentMode = .scaleAspectFill
@@ -17,6 +17,8 @@ class PlaceCollectionViewCell: UICollectionViewCell {
         button.frame.size.height = 254
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
+//        button.addTarget(PlaceCollectionViewCell.self, action: #selector(MainViewController.placeDetails), for: .touchUpInside)
+
 
         return button
     }()

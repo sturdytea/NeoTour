@@ -23,8 +23,7 @@ class MainViewController: UIViewController {
         // TODO: Establish Font: UIFont(name: "SFProDisplay-Heavy", size: 32)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.setHidesBackButton(true, animated: false)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
-    
-    // TODO: Init Buttons' Actions 
 }

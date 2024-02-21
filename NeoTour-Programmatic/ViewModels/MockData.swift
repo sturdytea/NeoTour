@@ -23,18 +23,21 @@ struct MockData {
     
     private let places: ListSection = {
         .places([
-            .init(name: "Mount Fuji", image: "mount-fuji"),
+            .init(name: "Northern Mountain", image: "northern-mountain"),
             .init(name: "Mount Fuji", image: "mount-fuji"),
         ])
     }()
 
     private let recommended: ListSection = {
         .recommended([
-            .init(name: "Mount1 Fuji", image: "mount-fuji"),
-            .init(name: "Mount2 Fuji", image: "onboarding"),
-            .init(name: "Mount3 Fuji", image: "mount-fuji"),
+            .init(name: "Greenough Montana", image: "greenough-montana"),
+            .init(name: "Razek's House", image: "razeks-house"),
+            .init(name: "Alta, Norway", image: "alta-norway"),
+            .init(name: "Guilin, China", image: "guilin-china"),
         ])
     }()
+    
+//    private let reviews
 
     var pageData: [ListSection] {
         [category, places, recommended]
