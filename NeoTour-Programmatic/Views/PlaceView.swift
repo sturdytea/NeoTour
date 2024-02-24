@@ -20,6 +20,13 @@ class PlaceView: UIView {
         return table
     }()
     
+    let button: CustomPrimaryButton = {
+        let button = CustomPrimaryButton()
+        button.setTitle("Book Now", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -29,9 +36,21 @@ class PlaceView: UIView {
     
     private func configure() {
         addSubview(tableView)
+        addSubview(button)
         tableView.delegate = self
         tableView.dataSource = self
     }
+    
+//    func bookButtonPressed() {
+//        let bottomSheetViewController = BottomSheetViewController()
+//        if let sheet = bottomSheetViewController.sheetPresentationController {
+//            sheet.detents = [.medium()]
+//            sheet.prefersGrabberVisible = true
+//            sheet.preferredCornerRadius = 28
+//        }
+//        
+//        present(bottomSheetViewController, animated: true)
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -55,12 +74,14 @@ extension PlaceView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row < 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: DescriptionTableViewCell.identifier, for: indexPath) as! DescriptionTableViewCell
+    #warning ("TODO: Connect API")
             cell.configureCell(name: "Mount Fuji", location: "Honshu, Japan", imageName: "mount-fuji", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim eget amet viverra eget fames rhoncus. Eget enim venenatis enim porta egestas malesuada et. Consequat mauris lacus euismod montes.")
             return cell
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: ReviewsTableViewCell.identifier, for: indexPath)
-        cell.textLabel?.text = "dldk"
+        let cell = tableView.dequeueReusableCell(withIdentifier: ReviewsTableViewCell.identifier, for: indexPath) as! ReviewsTableViewCell
+    #warning ("TODO: Connect API")
+        cell.configureCell(numberOfReviews: 1)
         return cell
     }
     
@@ -79,7 +100,11 @@ extension PlaceView {
             tableView.topAnchor.constraint(equalTo: topAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            
+            button.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            button.centerXAnchor.constraint(equalTo: centerXAnchor),
+            button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
         ])
     }
 }

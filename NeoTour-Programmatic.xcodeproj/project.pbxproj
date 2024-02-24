@@ -39,6 +39,10 @@
 		B8EB52442B85184E001C7B73 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52432B85184E001C7B73 /* Review.swift */; };
 		B8EB52462B85227D001C7B73 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52452B85227D001C7B73 /* DescriptionTableViewCell.swift */; };
 		B8EB52482B85228C001C7B73 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52472B85228C001C7B73 /* ReviewsTableViewCell.swift */; };
+		B8EB524C2B872FE0001C7B73 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB524B2B872FE0001C7B73 /* BottomSheetViewController.swift */; };
+		B8EB524E2B8734A7001C7B73 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */; };
+		B8EB52522B8A28F9001C7B73 /* ModalPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */; };
+		B8EB52542B8A2AA4001C7B73 /* ModalPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +80,10 @@
 		B8EB52432B85184E001C7B73 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		B8EB52452B85227D001C7B73 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		B8EB52472B85228C001C7B73 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		B8EB524B2B872FE0001C7B73 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
+		B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPopupView.swift; sourceTree = "<group>"; };
+		B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +147,8 @@
 				B8EB51B62B835197001C7B73 /* OnboardingView.swift */,
 				B8EB52252B83BC12001C7B73 /* MainView.swift */,
 				B8EB523F2B84C47D001C7B73 /* PlaceView.swift */,
+				B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */,
+				B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -149,6 +159,8 @@
 				B8EB51A22B834FCF001C7B73 /* OnboardingViewController.swift */,
 				B8EB52232B83B6EA001C7B73 /* MainViewController.swift */,
 				B8EB523D2B84C405001C7B73 /* PlaceViewController.swift */,
+				B8EB524B2B872FE0001C7B73 /* BottomSheetViewController.swift */,
+				B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -290,11 +302,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EB51A32B834FCF001C7B73 /* OnboardingViewController.swift in Sources */,
+				B8EB524C2B872FE0001C7B73 /* BottomSheetViewController.swift in Sources */,
+				B8EB52522B8A28F9001C7B73 /* ModalPopupView.swift in Sources */,
+				B8EB524E2B8734A7001C7B73 /* BottomSheetView.swift in Sources */,
 				B8EB52482B85228C001C7B73 /* ReviewsTableViewCell.swift in Sources */,
 				B8EB52262B83BC12001C7B73 /* MainView.swift in Sources */,
 				B8EB51B72B835197001C7B73 /* OnboardingView.swift in Sources */,
 				B8EB523E2B84C405001C7B73 /* PlaceViewController.swift in Sources */,
 				B8EB52302B83C436001C7B73 /* ListItem.swift in Sources */,
+				B8EB52542B8A2AA4001C7B73 /* ModalPopupViewController.swift in Sources */,
 				B8EB519F2B834FCF001C7B73 /* AppDelegate.swift in Sources */,
 				B8EB52242B83B6EA001C7B73 /* MainViewController.swift in Sources */,
 				B8EB52222B83AE01001C7B73 /* CustomImageButton.swift in Sources */,

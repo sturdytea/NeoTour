@@ -24,10 +24,22 @@ class PlaceViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.tintColor = .white
         extendedLayoutIncludesOpaqueBars = true
+        placeView.button.addTarget(self, action: #selector(bookButtonPressed), for: .touchUpInside)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         placeView.tableView.frame = view.bounds 
+    }
+    
+    @objc func bookButtonPressed() {
+        let bottomSheetViewController = BottomSheetViewController()
+        if let sheet = bottomSheetViewController.sheetPresentationController {
+            sheet.detents = [.medium()]
+            sheet.prefersGrabberVisible = true
+            sheet.preferredCornerRadius = 28
+        }
+        
+        present(bottomSheetViewController, animated: true)
     }
 }
