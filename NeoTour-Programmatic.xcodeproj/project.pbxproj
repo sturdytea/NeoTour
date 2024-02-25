@@ -35,7 +35,7 @@
 		B8EB523C2B83D6D1001C7B73 /* HeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB523B2B83D6D1001C7B73 /* HeaderSupplementaryView.swift */; };
 		B8EB523E2B84C405001C7B73 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB523D2B84C405001C7B73 /* PlaceViewController.swift */; };
 		B8EB52402B84C47D001C7B73 /* PlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB523F2B84C47D001C7B73 /* PlaceView.swift */; };
-		B8EB52422B8517F4001C7B73 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52412B8517F4001C7B73 /* Place.swift */; };
+		B8EB52422B8517F4001C7B73 /* Tour.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52412B8517F4001C7B73 /* Tour.swift */; };
 		B8EB52442B85184E001C7B73 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52432B85184E001C7B73 /* Review.swift */; };
 		B8EB52462B85227D001C7B73 /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52452B85227D001C7B73 /* DescriptionTableViewCell.swift */; };
 		B8EB52482B85228C001C7B73 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52472B85228C001C7B73 /* ReviewsTableViewCell.swift */; };
@@ -43,6 +43,13 @@
 		B8EB524E2B8734A7001C7B73 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */; };
 		B8EB52522B8A28F9001C7B73 /* ModalPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */; };
 		B8EB52542B8A2AA4001C7B73 /* ModalPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */; };
+		B8EB52682B8A91D3001C7B73 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52672B8A91D3001C7B73 /* Category.swift */; };
+		B8EB526A2B8A91E9001C7B73 /* BookingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52692B8A91E9001C7B73 /* BookingRequest.swift */; };
+		B8EB526C2B8A93E8001C7B73 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB526B2B8A93E8001C7B73 /* NetworkError.swift */; };
+		B8EB526E2B8A9417001C7B73 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB526D2B8A9417001C7B73 /* EndPoint.swift */; };
+		B8EB52702B8A96D7001C7B73 /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB526F2B8A96D7001C7B73 /* URLManager.swift */; };
+		B8EB52722B8A972A001C7B73 /* NetworkServiceWithCompletions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52712B8A972A001C7B73 /* NetworkServiceWithCompletions.swift */; };
+		B8EB52752B8AB7CC001C7B73 /* TourViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52742B8AB7CC001C7B73 /* TourViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,7 +83,7 @@
 		B8EB523B2B83D6D1001C7B73 /* HeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSupplementaryView.swift; sourceTree = "<group>"; };
 		B8EB523D2B84C405001C7B73 /* PlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		B8EB523F2B84C47D001C7B73 /* PlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceView.swift; sourceTree = "<group>"; };
-		B8EB52412B8517F4001C7B73 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		B8EB52412B8517F4001C7B73 /* Tour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tour.swift; sourceTree = "<group>"; };
 		B8EB52432B85184E001C7B73 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		B8EB52452B85227D001C7B73 /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		B8EB52472B85228C001C7B73 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +91,13 @@
 		B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPopupView.swift; sourceTree = "<group>"; };
 		B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPopupViewController.swift; sourceTree = "<group>"; };
+		B8EB52672B8A91D3001C7B73 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B8EB52692B8A91E9001C7B73 /* BookingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRequest.swift; sourceTree = "<group>"; };
+		B8EB526B2B8A93E8001C7B73 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B8EB526D2B8A9417001C7B73 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		B8EB526F2B8A96D7001C7B73 /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
+		B8EB52712B8A972A001C7B73 /* NetworkServiceWithCompletions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceWithCompletions.swift; sourceTree = "<group>"; };
+		B8EB52742B8AB7CC001C7B73 /* TourViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TourViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +130,7 @@
 		B8EB519D2B834FCF001C7B73 /* NeoTour-Programmatic */ = {
 			isa = PBXGroup;
 			children = (
+				B8EB52732B8A9991001C7B73 /* Service */,
 				B8EB51BC2B838CFD001C7B73 /* Fonts */,
 				B8EB51B22B8350FE001C7B73 /* Models */,
 				B8EB51B52B835125001C7B73 /* ViewModels */,
@@ -133,8 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				B8EB522F2B83C436001C7B73 /* ListItem.swift */,
-				B8EB52412B8517F4001C7B73 /* Place.swift */,
+				B8EB52412B8517F4001C7B73 /* Tour.swift */,
 				B8EB52432B85184E001C7B73 /* Review.swift */,
+				B8EB52672B8A91D3001C7B73 /* Category.swift */,
+				B8EB52692B8A91E9001C7B73 /* BookingRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +187,7 @@
 			children = (
 				B8EB52292B83C2C9001C7B73 /* ListSection.swift */,
 				B8EB52312B83C5D1001C7B73 /* MockData.swift */,
+				B8EB52742B8AB7CC001C7B73 /* TourViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -219,6 +237,25 @@
 				B8EB52472B85228C001C7B73 /* ReviewsTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		B8EB52552B8A3E01001C7B73 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB526B2B8A93E8001C7B73 /* NetworkError.swift */,
+				B8EB526D2B8A9417001C7B73 /* EndPoint.swift */,
+				B8EB526F2B8A96D7001C7B73 /* URLManager.swift */,
+				B8EB52712B8A972A001C7B73 /* NetworkServiceWithCompletions.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B8EB52732B8A9991001C7B73 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB52552B8A3E01001C7B73 /* Networking */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,27 +339,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EB51A32B834FCF001C7B73 /* OnboardingViewController.swift in Sources */,
+				B8EB526C2B8A93E8001C7B73 /* NetworkError.swift in Sources */,
 				B8EB524C2B872FE0001C7B73 /* BottomSheetViewController.swift in Sources */,
+				B8EB526A2B8A91E9001C7B73 /* BookingRequest.swift in Sources */,
 				B8EB52522B8A28F9001C7B73 /* ModalPopupView.swift in Sources */,
 				B8EB524E2B8734A7001C7B73 /* BottomSheetView.swift in Sources */,
 				B8EB52482B85228C001C7B73 /* ReviewsTableViewCell.swift in Sources */,
 				B8EB52262B83BC12001C7B73 /* MainView.swift in Sources */,
 				B8EB51B72B835197001C7B73 /* OnboardingView.swift in Sources */,
 				B8EB523E2B84C405001C7B73 /* PlaceViewController.swift in Sources */,
+				B8EB526E2B8A9417001C7B73 /* EndPoint.swift in Sources */,
+				B8EB52682B8A91D3001C7B73 /* Category.swift in Sources */,
 				B8EB52302B83C436001C7B73 /* ListItem.swift in Sources */,
 				B8EB52542B8A2AA4001C7B73 /* ModalPopupViewController.swift in Sources */,
 				B8EB519F2B834FCF001C7B73 /* AppDelegate.swift in Sources */,
 				B8EB52242B83B6EA001C7B73 /* MainViewController.swift in Sources */,
 				B8EB52222B83AE01001C7B73 /* CustomImageButton.swift in Sources */,
 				B8EB52202B83ADEE001C7B73 /* CustomPrimaryButton.swift in Sources */,
-				B8EB52422B8517F4001C7B73 /* Place.swift in Sources */,
+				B8EB52422B8517F4001C7B73 /* Tour.swift in Sources */,
 				B8EB52382B83CD27001C7B73 /* PlaceCollectionViewCell.swift in Sources */,
 				B8EB52442B85184E001C7B73 /* Review.swift in Sources */,
+				B8EB52752B8AB7CC001C7B73 /* TourViewModel.swift in Sources */,
 				B8EB52402B84C47D001C7B73 /* PlaceView.swift in Sources */,
+				B8EB52702B8A96D7001C7B73 /* URLManager.swift in Sources */,
 				B8EB523C2B83D6D1001C7B73 /* HeaderSupplementaryView.swift in Sources */,
 				B8EB52462B85227D001C7B73 /* DescriptionTableViewCell.swift in Sources */,
 				B8EB523A2B83CD38001C7B73 /* RecommendedCollectionViewCell.swift in Sources */,
 				B8EB52362B83CB4C001C7B73 /* CategoryCollectionViewCell.swift in Sources */,
+				B8EB52722B8A972A001C7B73 /* NetworkServiceWithCompletions.swift in Sources */,
 				B8EB522A2B83C2C9001C7B73 /* ListSection.swift in Sources */,
 				B8EB52322B83C5D1001C7B73 /* MockData.swift in Sources */,
 			);

@@ -26,6 +26,7 @@ class MainView: UIView {
     
     private let sections = MockData.shared.pageData
     var selectionDelegate: PlaceSelectionDelegate?
+    var tours: [TourResults.Tour]!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -201,6 +202,7 @@ extension MainView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch sections[indexPath.section] {
             
+            // MARK: Category Section
         case .category(let category):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell
             else {
@@ -209,17 +211,22 @@ extension MainView: UICollectionViewDataSource {
             cell.configureCell(categoryName: category[indexPath.row].name)
             return cell
             
+            // MARK: Places Section
         case .places(let place):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlaceCollectionViewCell", for: indexPath) as? PlaceCollectionViewCell
             else {
                 return UICollectionViewCell()
             }
-            cell.configureCell(imageName: place[indexPath.row].image, title: place[indexPath.row].name)
+            let tour = self.tours[indexPath.row]
+            cell.configureCell(imageName: tour.photoUrl, title: tour.name)
+            
+            #warning("TODO: Move to Controller")
             cell.image.tag = indexPath.row
             cell.image.addTarget(self, action: #selector(placeDetails), for: .touchUpInside)
             
             return cell
             
+            // MARK: Recommended Section
         case .recommended(let recommended):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RecommendedCollectionViewCell", for: indexPath) as? RecommendedCollectionViewCell
             else {

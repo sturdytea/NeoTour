@@ -7,20 +7,9 @@
 
 import Foundation
 
-struct Review {
-    let reviewer: String
-    let photo: String
-    let review: String
-    
-    init(reviewer: String, photo: String, review: String) {
-        self.reviewer = reviewer
-        self.photo = photo
-        self.review = review
-    }
-    
-    init(review: String) {
-        self.reviewer = "Anonymous"
-        self.photo = "avatar-default"
-        self.review = review
-    }
+struct Review: Decodable {
+    let id: Int
+    let authorNickname: String
+    let authorPhoto: String
+    let text: String
 }
