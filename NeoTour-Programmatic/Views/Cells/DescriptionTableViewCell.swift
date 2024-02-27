@@ -33,7 +33,7 @@ class DescriptionTableViewCell: UITableViewCell {
     
     let backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFit
+        image.contentMode = .scaleAspectFill
         image.image = UIImage(named: "mount-fuji")
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -76,12 +76,11 @@ class DescriptionTableViewCell: UITableViewCell {
         self.location.setTitle(location, for: .normal)
         backgroundImage.image = UIImage(named: imageName)
         shortDescription.text = description
-        
-        configure()
+        setupViews()
         setupConstraints()
     }
     
-    private func configure() {
+    private func setupViews() {
         clipsToBounds = true
         addSubview(backgroundImage)
         backgroundImage.addSubview(whiteBack)

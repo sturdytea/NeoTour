@@ -17,6 +17,6 @@ struct TourResults: Decodable {
         let location: String
         let photoUrl: String
         let description: String
-        var reviews: [Review]
+        let reviews: [Review]
     }
 }

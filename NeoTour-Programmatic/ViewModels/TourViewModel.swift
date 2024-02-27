@@ -8,19 +8,20 @@
 import Foundation
 
 class TourViewModel: NSObject {
-    private var networkService: NetworkServiceWithCompletions!
-    private(set) var tourData: TourResults.Tour! {
-        didSet {
-            self.bindTourViewModelController()
-        }
-    }
+    private var networkService = NetworkServiceWithCompletions()
+    
+//    private(set) var tourData: TourResults.Tour {
+//        didSet {
+//            self.bindTourViewModelController()
+//        }
+//    }
     
     var bindTourViewModelController: (() -> ()) = {}
     
     override init() {
         super.init()
-        self.networkService = NetworkServiceWithCompletions()
-        callFunctionToGetTourData()
+//        networkService = NetworkServiceWithCompletions()
+//        callFunctionToGetTourData()
     }
     
     func callFunctionToGetTourData() {

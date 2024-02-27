@@ -8,7 +8,9 @@
 import Foundation
 
 class URLManager {
-    static let shared = URLManager(); private init() { }
+    static let shared = URLManager()
+    
+    private init() { }
     
     let tunnel = "https://"
     let server = "/api"

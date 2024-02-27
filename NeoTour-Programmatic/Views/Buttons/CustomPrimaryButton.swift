@@ -38,5 +38,4 @@ class CustomPrimaryButton: UIButton {
         super.init(coder: coder)
         configure()
     }
-
 }

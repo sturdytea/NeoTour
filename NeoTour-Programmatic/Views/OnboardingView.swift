@@ -9,61 +9,63 @@ import UIKit
 
 class OnboardingView: UIView {
     
-    let image = UIImageView()
-    let titleLabel = UILabel()
-    let descriptionLabel = UILabel()
-    let button = CustomImageButton()
+    let image: UIImageView = {
+        let image = UIImageView()
+        image.contentMode = .scaleAspectFill
+        image.image = UIImage(named: "onboarding")
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "SFProDisplay-Heavy", size: 40)
+        label.numberOfLines = 0
+        label.text = "Winter\nVacation Trips"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        label.numberOfLines = 0
+        label.text = "Enjoy your winter vacations with warmth \nand amazing sightseeing on the mountains.\nEnjoy the best experience with us!"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 10
+        let attributedString = NSAttributedString(string: label.text!, attributes: [
+                    NSAttributedString.Key.paragraphStyle: paragraphStyle
+        ])
+        label.attributedText = attributedString
+        return label
+    }()
+    
+    let button: CustomPrimaryButton = {
+        let button = CustomPrimaryButton()
+        let arrowImage = UIImage(systemName: "arrow.right")
+        let coloredArrowImage = arrowImage?.withTintColor(UIColor.white, renderingMode: .alwaysOriginal)
+        button.configuration?.imagePadding = 20
+        button.contentHorizontalAlignment = .left
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.semanticContentAttribute = .forceRightToLeft
+        button.setImage(coloredArrowImage, for: .normal)
+        button.setTitle("Let's Go!", for: .normal)
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .white
-        configure()
-    }
-    
-    func configure() {
-        configureImage()
-        configureLabels()
-        configureButton()
+        setupViews()
         setupConstraints()
     }
     
-    func configureImage() {
+    func setupViews() {
         addSubview(image)
-        image.image = UIImage(named: "onboarding")
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
-    }
-    
-    func configureLabels() {
-        // TitleLabel
         addSubview(titleLabel)
-        titleLabel.text = "Winter\nVacation Trips"
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = UIFont(name: "SFProDisplay-Heavy", size: 40)
-        
-        titleLabel.numberOfLines = 0
-        
-        // DescriptionLabel
         addSubview(descriptionLabel)
-        descriptionLabel.text = "Enjoy your winter vacations with warmth \nand amazing sightseeing on the mountains.\nEnjoy the best experience with us!"
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        descriptionLabel.font = UIFont(name: "SFProDisplay-Medium", size: 16)
-        descriptionLabel.numberOfLines = 0
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 10
-        
-        let attributedString = NSAttributedString(string: descriptionLabel.text!, attributes: [
-                    NSAttributedString.Key.paragraphStyle: paragraphStyle
-        ])
-        
-        descriptionLabel.attributedText = attributedString
-    }
-    
-    func configureButton() {
         addSubview(button)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Let's Go!", for: .normal)
     }
     
     required init?(coder: NSCoder) {

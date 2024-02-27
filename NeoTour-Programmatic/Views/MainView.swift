@@ -16,17 +16,15 @@ class MainView: UIView {
     private let collectionView: UICollectionView = {
        let collectionViewLayout = UICollectionViewLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout)
-        
         collectionView.backgroundColor = .none
         collectionView.bounces = false
-        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     
     private let sections = MockData.shared.pageData
     var selectionDelegate: PlaceSelectionDelegate?
-    var tours: [TourResults.Tour]!
+    var tours: [TourResults.Tour] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -47,7 +45,6 @@ class MainView: UIView {
         collectionView.register(HeaderSupplementaryView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: "HeaderSupplementaryView")
-        
         collectionView.collectionViewLayout = createLayout()
     }
     
@@ -59,7 +56,6 @@ class MainView: UIView {
     @objc func placeDetails(sender: UIButton) {
         _ = IndexPath(row: sender.tag, section: 0)
         let placeViewController = PlaceViewController()
-//        selectionDelegate?.didPlaceChoice(at: tag)
         self.window?.rootViewController?.show(placeViewController, sender: self)
     }
     
@@ -75,10 +71,8 @@ extension MainView {
     private func createLayout() -> UICollectionViewCompositionalLayout {
         UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
             guard let self = self else { return nil }
-            let section = sections[sectionIndex]
             
-            switch section {
-                
+            switch sections[sectionIndex] {
             case .category(_):
                 return createCategorySection()
             case .places(_):
@@ -96,87 +90,78 @@ extension MainView {
                                      interGroupSpacing: CGFloat,
                                      supplementaryItems: [NSCollectionLayoutBoundarySupplementaryItem]) -> NSCollectionLayoutSection {
         let section = NSCollectionLayoutSection(group: group)
-        
         section.orthogonalScrollingBehavior = behavior
         section.interGroupSpacing = interGroupSpacing
         section.boundarySupplementaryItems = supplementaryItems
-        
         return section
     }
     
     private func supplementaryHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                                                       heightDimension: .estimated(25)),
-                                                                     elementKind: UICollectionView.elementKindSectionHeader,
-                                                                     alignment: .top)
-        
+        let headerItem = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .estimated(25)),
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top)
         return headerItem
     }
 
     // MARK: CategorySection
-    
     private func createCategorySection() -> NSCollectionLayoutSection {
+        let item = NSCollectionLayoutItem(
+            layoutSize: .init(widthDimension: .estimated(80),
+                              heightDimension: .estimated(40)))
         
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .estimated(80),
-                                                            heightDimension: .estimated(40)))
-        
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(1.5),
-                                                                         heightDimension: .estimated(50)),
-                                                       subitems: [item])
-        
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: .init(widthDimension: .fractionalWidth(1.5),
+                              heightDimension: .estimated(50)),
+            subitems: [item])
         group.interItemSpacing = .flexible(1)
         
         let section = createLayoutSection(group: group,
                                           behavior: .continuous,
                                           interGroupSpacing: 1,
                                           supplementaryItems: [])
-        
         section.contentInsets = .init(top: 10, leading: 16, bottom: 10, trailing: 0)
-        
         return section
     }
     
     // MARK: PlaceSection
-    
     private func createPlaceSection() -> NSCollectionLayoutSection {
         
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), 
-                                                            heightDimension: .fractionalHeight(1)))
+        let item = NSCollectionLayoutItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .fractionalHeight(1)))
         
-        
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: .init(widthDimension: .fractionalWidth(0.9),
-                                                                         heightDimension: .estimated(255)),
-                                                       subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: .init(widthDimension: .fractionalWidth(0.9),
+                              heightDimension: .estimated(255)),
+            subitems: [item])
         
         let section = createLayoutSection(group: group, 
                                           behavior: .groupPaging,
                                           interGroupSpacing: 2,
                                           supplementaryItems: [])
-        
         section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 0)
-        
         return section
     }
     
     // MARK: RecommendedSection
-    
     private func createRecommendedSection() -> NSCollectionLayoutSection {
         
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1),
-                                                            heightDimension: .fractionalHeight(1)))
+        let item = NSCollectionLayoutItem(
+            layoutSize: .init(widthDimension: .fractionalWidth(0.5),
+                              heightDimension: .fractionalHeight(1)))
         
-        // TODO: Make the scroll vertical
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: .init(widthDimension: .fractionalWidth(0.5),
-                                                                       heightDimension: .fractionalHeight(1)),
-                                                     subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: .init(widthDimension: .fractionalWidth(1),
+                              heightDimension: .fractionalWidth(0.53)),
+            subitems: [item])
         
         let section = createLayoutSection(group: group,
-                                          behavior: .continuous,
+                                          behavior: .none,
                                           interGroupSpacing: 1,
                                           supplementaryItems: [supplementaryHeaderItem()])
-        
         section.contentInsets = .init(top: 50, leading: 16, bottom: 0, trailing: 16)
-        
         return section
     }
 }
@@ -217,10 +202,9 @@ extension MainView: UICollectionViewDataSource {
             else {
                 return UICollectionViewCell()
             }
-            let tour = self.tours[indexPath.row]
-            cell.configureCell(imageName: tour.photoUrl, title: tour.name)
-            
-            #warning("TODO: Move to Controller")
+//            let tour = self.tours[indexPath.row]
+//            cell.configureCell(imageName: tour.photoUrl, title: tour.name)
+            cell.configureCell(imageName: place[indexPath.row].image, title: place[indexPath.row].name)
             cell.image.tag = indexPath.row
             cell.image.addTarget(self, action: #selector(placeDetails), for: .touchUpInside)
             
@@ -240,14 +224,13 @@ extension MainView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader: 
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, 
-                                                                         withReuseIdentifier: "HeaderSupplementaryView",
-                                                                         for: indexPath) as! HeaderSupplementaryView
+            let header = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind, withReuseIdentifier: "HeaderSupplementaryView", for: indexPath)
+            as! HeaderSupplementaryView
             header.configureHeader(name: sections[indexPath.section].title)
             return header
         default:
             return UICollectionReusableView()
-            
         }
     }
 }

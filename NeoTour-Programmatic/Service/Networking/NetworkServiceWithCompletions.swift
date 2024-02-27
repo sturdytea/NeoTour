@@ -8,10 +8,12 @@
 import Foundation
 
 class NetworkServiceWithCompletions {
-    static let shared = NetworkServiceWithCompletions(); init() {}
+    static let shared = NetworkServiceWithCompletions()
+    
+    init() {}
     
     func fetchTours(completion: @escaping (Result<TourResults, Error>) -> ()) {
-        guard let url = URLManager.shared.createURL(endPoint: .tours, id: nil) else {
+        guard let url = URLManager.shared.createURL(endPoint: .getTours, id: nil) else {
             completion(.failure(NetworkError.badUrl))
             return
         }
@@ -36,7 +38,7 @@ class NetworkServiceWithCompletions {
     }
     
     func fetchTourDetails(id: Int, completion: @escaping (Result<TourResults.Tour, Error>) -> ()) {
-        guard let url = URLManager.shared.createURL(endPoint: .tours, id: id) else {
+        guard let url = URLManager.shared.createURL(endPoint: .getTours, id: id) else {
             completion(.failure(NetworkError.badUrl))
             return
         }

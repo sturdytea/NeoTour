@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     private lazy var mainView = MainView()
-    private var tourViewModel: TourViewModel!
+//    private var viewModel: TourViewModel
     
     override func loadView() {
         view = mainView
@@ -27,19 +27,19 @@ class MainViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
-        callToViewModelForUpdate()
+//        callToViewModelForUpdate()
     }
     
-    func callToViewModelForUpdate() {
-        self.tourViewModel = TourViewModel()
-        self.tourViewModel.bindTourViewModelController = {
-            self.updateDataSource()
-        }
-    }
-    
-    func updateDataSource() {
-        DispatchQueue.main.async {
-            #warning("TODO: Finish update UI")
-        }
-    }
+//    func callToViewModelForUpdate() {
+//        self.viewModel = TourViewModel()
+//        self.viewModel.bindTourViewModelController = {
+//            self.updateDataSource()
+//        }
+//    }
+//    
+//    func updateDataSource() {
+//        DispatchQueue.main.async {
+//            #warning("TODO: Finish update UI")
+//        }
+//    }
 }
