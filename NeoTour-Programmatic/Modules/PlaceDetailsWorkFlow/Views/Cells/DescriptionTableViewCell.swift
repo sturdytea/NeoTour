@@ -13,7 +13,7 @@ class DescriptionTableViewCell: UITableViewCell {
     
     let placeName: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Heavy", size: 24)
+        label.font = UIFont.customFont(.black, size: 24)
         label.textColor = .black
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +26,7 @@ class DescriptionTableViewCell: UITableViewCell {
         button.configuration?.imagePadding = 10
         button.setImage(UIImage(named: "map-marker"), for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "SFProDisplay-Light", size: 12) // TODO: Size is not changing
+        button.titleLabel?.font = UIFont.customFont(.medium, size: 12)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -49,7 +49,7 @@ class DescriptionTableViewCell: UITableViewCell {
     
     let paragraphSubtitle: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Semibold", size: 20)
+        label.font = UIFont.customFont(.semibold, size: 20)
         label.text = "Description"
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +66,7 @@ class DescriptionTableViewCell: UITableViewCell {
                     NSAttributedString.Key.paragraphStyle: paragraphStyle
         ])
         text.attributedText = attributedString
-        text.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        text.font = UIFont.customFont(.regular, size: 16)
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
     }()

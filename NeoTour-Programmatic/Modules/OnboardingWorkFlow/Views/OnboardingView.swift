@@ -19,7 +19,7 @@ class OnboardingView: UIView {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Heavy", size: 40)
+        label.font = UIFont.customFont(.black, size: 40)
         label.numberOfLines = 0
         label.text = "Winter\nVacation Trips"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ class OnboardingView: UIView {
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        label.font = UIFont.customFont(.regular, size: 16)
         label.numberOfLines = 0
         label.text = "Enjoy your winter vacations with warmth \nand amazing sightseeing on the mountains.\nEnjoy the best experience with us!"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -47,6 +47,7 @@ class OnboardingView: UIView {
         let coloredArrowImage = arrowImage?.withTintColor(UIColor.white, renderingMode: .alwaysOriginal)
         button.configuration?.imagePadding = 20
         button.contentHorizontalAlignment = .left
+        button.titleLabel?.font.withSize(16)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.semanticContentAttribute = .forceRightToLeft
         button.setImage(coloredArrowImage, for: .normal)
@@ -83,7 +84,7 @@ extension OnboardingView {
             
             titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),
-            titleLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 25),
+            titleLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 33),
             
             descriptionLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             descriptionLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 16),

@@ -17,13 +17,13 @@ class BottomSheetViewController: UIViewController {
     
     override func viewDidLoad() {
          super.viewDidLoad()
-        bottomSheetView.button.addTarget(self, action: #selector(submitButtonPressed), for: .touchUpInside)
+        bottomSheetView.button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
-    @objc func submitButtonPressed() {
-        let modalPopupViewController = ModalPopupViewController()
-        modalPopupViewController.modalPresentationStyle = .formSheet
-        present(modalPopupViewController, animated: true)
-
+    @objc func buttonTapped() {
+        let alertViewController = AlertViewController()
+        alertViewController.modalPresentationStyle = UIModalPresentationStyle.custom
+        alertViewController.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        present(alertViewController, animated: true)
     }
 }

@@ -11,28 +11,31 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     private let title: UIButton = {
         let button = UIButton()
-        
         button.backgroundColor = .none
         button.contentHorizontalAlignment = .leading
-        button.frame.size.height = 39
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "SFProDisplay-Light", size: 16) // TODO: Establish Fonts
-        button.tintColor = UIColor(red: 106/255.0, green: 98/255.0, blue: 183/255.0, alpha: 1.0)
+        button.titleLabel?.font = UIFont.customFont(.regular, size: 16)
+        button.tintColor = .primaryColor
         button.translatesAutoresizingMaskIntoConstraints = false
-        
+        button.setTitleColor(.black, for: .normal)
+        button.sizeToFit()
         var buttonConfig = UIButton.Configuration.plain()
         button.configuration = buttonConfig
-        
         return button
+    }()
+    
+    private lazy var selectedTitlePoint: UIView = {
+        let view = UIView()
+        view.backgroundColor = .primaryColor
+        view.isHidden = true
+        view.layer.cornerRadius = 3.5
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configure()
-    }
-    
-    private func configure() {
         addSubview(title)
+        addSubview(selectedTitlePoint)
     }
     
     func configureCell(categoryName: String) {

@@ -87,7 +87,7 @@ extension MainView {
     
     private func createLayoutSection(group: NSCollectionLayoutGroup,
                                      behavior: UICollectionLayoutSectionOrthogonalScrollingBehavior,
-                                     interGroupSpacing: CGFloat,
+                                     interGroupSpacing: CGFloat = 1,
                                      supplementaryItems: [NSCollectionLayoutBoundarySupplementaryItem]) -> NSCollectionLayoutSection {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = behavior
@@ -119,7 +119,6 @@ extension MainView {
         
         let section = createLayoutSection(group: group,
                                           behavior: .continuous,
-                                          interGroupSpacing: 1,
                                           supplementaryItems: [])
         section.contentInsets = .init(top: 10, leading: 16, bottom: 10, trailing: 0)
         return section
@@ -129,17 +128,16 @@ extension MainView {
     private func createPlaceSection() -> NSCollectionLayoutSection {
         
         let item = NSCollectionLayoutItem(
-            layoutSize: .init(widthDimension: .fractionalWidth(1),
+            layoutSize: .init(widthDimension: .fractionalWidth(0.95),
                               heightDimension: .fractionalHeight(1)))
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: .init(widthDimension: .fractionalWidth(0.9),
-                              heightDimension: .estimated(255)),
+                              heightDimension: .fractionalHeight(1/3)),
             subitems: [item])
         
         let section = createLayoutSection(group: group, 
                                           behavior: .groupPaging,
-                                          interGroupSpacing: 2,
                                           supplementaryItems: [])
         section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 0)
         return section
@@ -151,18 +149,29 @@ extension MainView {
         let item = NSCollectionLayoutItem(
             layoutSize: .init(widthDimension: .fractionalWidth(0.5),
                               heightDimension: .fractionalHeight(1)))
+        item.contentInsets = .init(top: 5, leading: 5, bottom: 5, trailing: 5)
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: .init(widthDimension: .fractionalWidth(1),
-                              heightDimension: .fractionalWidth(0.53)),
+                              heightDimension: .fractionalWidth(0.5)),
             subitems: [item])
         
         let section = createLayoutSection(group: group,
                                           behavior: .none,
-                                          interGroupSpacing: 1,
+                                          interGroupSpacing: 5,
                                           supplementaryItems: [supplementaryHeaderItem()])
-        section.contentInsets = .init(top: 50, leading: 16, bottom: 0, trailing: 16)
+        section.contentInsets = .init(top: 40, leading: 11, bottom: 0, trailing: 11)
         return section
+    }
+    
+    func calculateItemWidth(for text: String) -> CGFloat {
+        let label = UILabel()
+        label.text = text
+        label.numberOfLines = 1
+        label.sizeToFit()
+
+        let padding: CGFloat = 16
+        return label.frame.width + padding
     }
 }
 

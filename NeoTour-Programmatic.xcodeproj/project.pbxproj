@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B89068232B8E136B00DEECBD /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89068222B8E136B00DEECBD /* ListItem.swift */; };
+		B89068382B8E510D00DEECBD /* AlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89068372B8E510D00DEECBD /* AlertWindow.swift */; };
+		B890683A2B8E546700DEECBD /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89068392B8E546700DEECBD /* AlertViewController.swift */; };
+		B890683D2B8E6D7D00DEECBD /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B890683C2B8E6D7D00DEECBD /* UIColor.swift */; };
+		B89068412B8E722C00DEECBD /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89068402B8E722C00DEECBD /* UIFont.swift */; };
 		B8EB519F2B834FCF001C7B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB519E2B834FCF001C7B73 /* AppDelegate.swift */; };
 		B8EB51A32B834FCF001C7B73 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB51A22B834FCF001C7B73 /* OnboardingViewController.swift */; };
 		B8EB51A82B834FD1001C7B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8EB51A72B834FD1001C7B73 /* Assets.xcassets */; };
@@ -40,8 +44,6 @@
 		B8EB52482B85228C001C7B73 /* ReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52472B85228C001C7B73 /* ReviewsTableViewCell.swift */; };
 		B8EB524C2B872FE0001C7B73 /* BottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB524B2B872FE0001C7B73 /* BottomSheetViewController.swift */; };
 		B8EB524E2B8734A7001C7B73 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */; };
-		B8EB52522B8A28F9001C7B73 /* ModalPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */; };
-		B8EB52542B8A2AA4001C7B73 /* ModalPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */; };
 		B8EB52682B8A91D3001C7B73 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52672B8A91D3001C7B73 /* Category.swift */; };
 		B8EB526A2B8A91E9001C7B73 /* BookingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52692B8A91E9001C7B73 /* BookingRequest.swift */; };
 		B8EB526C2B8A93E8001C7B73 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB526B2B8A93E8001C7B73 /* NetworkError.swift */; };
@@ -53,6 +55,10 @@
 
 /* Begin PBXFileReference section */
 		B89068222B8E136B00DEECBD /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		B89068372B8E510D00DEECBD /* AlertWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWindow.swift; sourceTree = "<group>"; };
+		B89068392B8E546700DEECBD /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		B890683C2B8E6D7D00DEECBD /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		B89068402B8E722C00DEECBD /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		B8EB519B2B834FCF001C7B73 /* NeoTour-Programmatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeoTour-Programmatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EB519E2B834FCF001C7B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8EB51A22B834FCF001C7B73 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -87,8 +93,6 @@
 		B8EB52472B85228C001C7B73 /* ReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewCell.swift; sourceTree = "<group>"; };
 		B8EB524B2B872FE0001C7B73 /* BottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewController.swift; sourceTree = "<group>"; };
 		B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
-		B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPopupView.swift; sourceTree = "<group>"; };
-		B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPopupViewController.swift; sourceTree = "<group>"; };
 		B8EB52672B8A91D3001C7B73 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B8EB52692B8A91E9001C7B73 /* BookingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRequest.swift; sourceTree = "<group>"; };
 		B8EB526B2B8A93E8001C7B73 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 		B89068322B8E159400DEECBD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				B8EB51BC2B838CFD001C7B73 /* Fonts */,
+				B890683B2B8E6D5E00DEECBD /* Extensions */,
 				B89068332B8E159F00DEECBD /* CustomViews */,
 			);
 			path = Common;
@@ -274,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				B8EB524B2B872FE0001C7B73 /* BottomSheetViewController.swift */,
-				B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */,
+				B89068392B8E546700DEECBD /* AlertViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -283,9 +289,18 @@
 			isa = PBXGroup;
 			children = (
 				B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */,
-				B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */,
+				B89068372B8E510D00DEECBD /* AlertWindow.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B890683B2B8E6D5E00DEECBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B890683C2B8E6D7D00DEECBD /* UIColor.swift */,
+				B89068402B8E722C00DEECBD /* UIFont.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B8EB51922B834FCF001C7B73 = {
@@ -310,7 +325,6 @@
 				B89068322B8E159400DEECBD /* Common */,
 				B89068202B8E12B900DEECBD /* Core */,
 				B89068212B8E12C100DEECBD /* Modules */,
-				B8EB51BC2B838CFD001C7B73 /* Fonts */,
 				B8EB519E2B834FCF001C7B73 /* AppDelegate.swift */,
 				B8EB51A72B834FD1001C7B73 /* Assets.xcassets */,
 				B8EB51A92B834FD1001C7B73 /* LaunchScreen.storyboard */,
@@ -452,7 +466,7 @@
 				B8EB526C2B8A93E8001C7B73 /* NetworkError.swift in Sources */,
 				B8EB524C2B872FE0001C7B73 /* BottomSheetViewController.swift in Sources */,
 				B8EB526A2B8A91E9001C7B73 /* BookingRequest.swift in Sources */,
-				B8EB52522B8A28F9001C7B73 /* ModalPopupView.swift in Sources */,
+				B890683D2B8E6D7D00DEECBD /* UIColor.swift in Sources */,
 				B8EB524E2B8734A7001C7B73 /* BottomSheetView.swift in Sources */,
 				B8EB52482B85228C001C7B73 /* ReviewsTableViewCell.swift in Sources */,
 				B8EB52262B83BC12001C7B73 /* MainView.swift in Sources */,
@@ -460,19 +474,21 @@
 				B8EB523E2B84C405001C7B73 /* PlaceViewController.swift in Sources */,
 				B8EB526E2B8A9417001C7B73 /* EndPoint.swift in Sources */,
 				B8EB52682B8A91D3001C7B73 /* Category.swift in Sources */,
-				B8EB52542B8A2AA4001C7B73 /* ModalPopupViewController.swift in Sources */,
 				B8EB519F2B834FCF001C7B73 /* AppDelegate.swift in Sources */,
 				B8EB52242B83B6EA001C7B73 /* MainViewController.swift in Sources */,
 				B8EB52202B83ADEE001C7B73 /* CustomPrimaryButton.swift in Sources */,
+				B89068412B8E722C00DEECBD /* UIFont.swift in Sources */,
 				B8EB52422B8517F4001C7B73 /* Tour.swift in Sources */,
 				B8EB52382B83CD27001C7B73 /* PlaceCollectionViewCell.swift in Sources */,
 				B8EB52442B85184E001C7B73 /* Review.swift in Sources */,
 				B8EB52752B8AB7CC001C7B73 /* TourViewModel.swift in Sources */,
 				B8EB52402B84C47D001C7B73 /* PlaceView.swift in Sources */,
 				B8EB52702B8A96D7001C7B73 /* URLManager.swift in Sources */,
+				B890683A2B8E546700DEECBD /* AlertViewController.swift in Sources */,
 				B8EB523C2B83D6D1001C7B73 /* HeaderSupplementaryView.swift in Sources */,
 				B8EB52462B85227D001C7B73 /* DescriptionTableViewCell.swift in Sources */,
 				B8EB523A2B83CD38001C7B73 /* RecommendedCollectionViewCell.swift in Sources */,
+				B89068382B8E510D00DEECBD /* AlertWindow.swift in Sources */,
 				B8EB52362B83CB4C001C7B73 /* CategoryCollectionViewCell.swift in Sources */,
 				B8EB52722B8A972A001C7B73 /* NetworkServiceWithCompletions.swift in Sources */,
 				B8EB522A2B83C2C9001C7B73 /* ListSection.swift in Sources */,

@@ -11,33 +11,26 @@ class RecommendedCollectionViewCell: UICollectionViewCell {
     
     private let image: UIButton = {
         let button = UIButton()
-        
         button.contentMode = .scaleAspectFill
-        button.frame.size.width = 185
-        button.frame.size.height = 185
         button.layer.cornerRadius = 15
         button.layer.masksToBounds = true
-        
+        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     private let backgroundTitleView: UIView = {
         let view = UIView()
-        
         view.backgroundColor = .black.withAlphaComponent(0.4)
         view.translatesAutoresizingMaskIntoConstraints = false
-
         return view
     }()
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        
+        label.font = UIFont.customFont(.semibold, size: 14)
         label.textAlignment = .left
         label.textColor = .white
-        label.font = UIFont(name: "SFProDisplay-Semibold", size: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
-        
         return label
     }()
     
@@ -49,7 +42,7 @@ class RecommendedCollectionViewCell: UICollectionViewCell {
     
     private func configure() {
         clipsToBounds = true
-        addSubview(image)
+        contentView.addSubview(image)
         image.addSubview(backgroundTitleView)
         image.addSubview(titleLabel)
     }
@@ -67,6 +60,11 @@ class RecommendedCollectionViewCell: UICollectionViewCell {
 extension RecommendedCollectionViewCell {
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            image.topAnchor.constraint(equalTo: contentView.topAnchor),
+            image.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            image.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            image.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+
             titleLabel.leadingAnchor.constraint(equalTo: image.leadingAnchor, constant: 14),
             titleLabel.trailingAnchor.constraint(equalTo: image.trailingAnchor, constant: 0),
             titleLabel.centerYAnchor.constraint(equalTo: backgroundTitleView.centerYAnchor),
@@ -74,7 +72,7 @@ extension RecommendedCollectionViewCell {
             backgroundTitleView.leadingAnchor.constraint(equalTo: image.leadingAnchor, constant: 0),
             backgroundTitleView.trailingAnchor.constraint(equalTo: image.trailingAnchor, constant: 0),
             backgroundTitleView.bottomAnchor.constraint(equalTo: image.bottomAnchor, constant: 0),
-            backgroundTitleView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.06),
+            backgroundTitleView.heightAnchor.constraint(equalTo: image.heightAnchor, multiplier: 0.2),
         ])
     }
 }

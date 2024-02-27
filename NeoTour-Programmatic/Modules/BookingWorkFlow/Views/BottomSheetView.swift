@@ -7,11 +7,11 @@
 
 import UIKit
 
-class BottomSheetView: UIView {
+class BottomSheetView: UIView, UITextFieldDelegate {
     
     let title: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Semibold", size: 24)
+        label.font = UIFont.customFont(.bold, size: 24)
         label.text = "Info"
         label.textAlignment = .left
         label.textColor = .black
@@ -21,7 +21,7 @@ class BottomSheetView: UIView {
     
     let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 14)
+        label.font = UIFont.customFont(.regular, size: 14)
         label.text = "To submit an application for a tour reservation, you need to fill in your information and select the number of people for the reservation"
         label.textAlignment = .left
         label.textColor = .black
@@ -32,7 +32,7 @@ class BottomSheetView: UIView {
     
     let fieldLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Medium", size: 14)
+        label.font = UIFont.customFont(.medium, size: 14)
         label.text = "To submit an application for a tour reservation, you need to fill in your information and select the number of people for the reservation"
         label.textAlignment = .left
         label.textColor = .black
@@ -41,35 +41,15 @@ class BottomSheetView: UIView {
         return label
     }()
     
-    let phoneNumberField: UITextField = {
-        let textField = UITextField()
-        textField.layer.borderColor = UIColor.gray.cgColor
-        textField.layer.borderWidth = 1
-        textField.frame.size.height = 50
-        textField.layer.cornerRadius = textField.frame.size.height / 2
-        textField.layer.masksToBounds = false
-        textField.placeholder = "___ __ __"
-        textField.font = UIFont(name: "SFProDisplay-Medium", size: 16)
-        textField.textColor = .black
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.keyboardType = .numberPad
-        textField.textAlignment = .left
-        textField.isUserInteractionEnabled = true
+    let phoneNumberField: CustomTextField = {
+        let textField = CustomTextField()
+        textField.placeholder = "(___)___-__-__"
         return textField
     }()
     
-    let commentTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .none
-        textField.layer.borderColor = UIColor.gray.cgColor
-        textField.layer.borderWidth = 1
-        textField.frame.size.height = 50
-        textField.layer.cornerRadius = textField.frame.size.height / 2
-        textField.layer.masksToBounds = false
+    let commentTextField: CustomTextField = {
+        let textField = CustomTextField()
         textField.placeholder = "Write your wishes for trip..."
-        textField.font = UIFont(name: "SFProDisplay-Medium", size: 16)
-        textField.textColor = .black
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
@@ -83,7 +63,7 @@ class BottomSheetView: UIView {
     
     let grayBack: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 243/255, green: 243/255, blue: 243/255, alpha: 1)
+        view.backgroundColor = .stepperBackgroundColor
         view.frame.size.height = 36
         view.layer.cornerRadius = view.frame.size.height / 2
         view.layer.masksToBounds = true
@@ -100,6 +80,7 @@ class BottomSheetView: UIView {
     
     let decreaseButton: CustomStepperButton = {
         let button = CustomStepperButton()
+        button.isEnabled = false 
         button.setTitle("-", for: .normal)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         return button
@@ -107,7 +88,9 @@ class BottomSheetView: UIView {
     
     var currentValue = 1 {
         didSet {
-            currentValue = currentValue > 0 ? currentValue : 0
+            currentValue = currentValue > 1 ? currentValue : 1
+            decreaseButton.isEnabled = currentValue > 1 ? true : false
+            increaseButton.isEnabled = currentValue < 10 ? true : false
             currentStepperValue.text = "\(currentValue)"
             conclusionText.text = "\(currentValue) People"
         }
@@ -117,7 +100,7 @@ class BottomSheetView: UIView {
         var label = UILabel()
         label.text = "\(currentValue)"
         label.textColor = .black
-        label.font = UIFont(name: "SFProDisplay-Heavy", size: 16)
+        label.font = UIFont.customFont(.black, size: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -133,7 +116,7 @@ class BottomSheetView: UIView {
     private lazy var conclusionText: UILabel = {
         var label = UILabel()
         label.text = "\(currentValue) People"
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 16)
+        label.font = UIFont.customFont(.medium, size: 16)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -239,16 +222,56 @@ class CustomStepperButton: UIButton {
     }
     
     func configure() {
-        backgroundColor = UIColor(red: 106/255.0, green: 98/255.0, blue: 183/255.0, alpha: 1.0)
+        backgroundColor = .primaryColor
         frame.size.height = 36
         frame.size.width = 29
         layer.cornerRadius = frame.size.width / 2
         tintColor = .white
-        titleLabel?.font = UIFont(name: "SFProDisplay-Medium", size: 16)
+        titleLabel?.font = UIFont.customFont(.medium, size: 16)
         translatesAutoresizingMaskIntoConstraints = false
         setTitleColor(.white, for: .normal)
     }
     
+    override var isEnabled: Bool {
+        didSet {
+            if self.isEnabled == false {
+                backgroundColor = .secondaryColor
+            } else {
+                backgroundColor = .primaryColor
+            }
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: - CustomTextField
+class CustomTextField: UITextField {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+    
+    func configure() {
+        borderStyle = .none
+        font = UIFont.customFont(.regular, size: 16)
+        frame.size.height = 50
+        layer.borderColor = UIColor.gray.cgColor
+        layer.borderWidth = 1
+        layer.cornerRadius = frame.size.height / 2
+        layer.masksToBounds = false
+        textAlignment = .left
+        textColor = .black
+        translatesAutoresizingMaskIntoConstraints = false
+        isUserInteractionEnabled = true
+        let paddingView = UIView(frame: CGRectMake(0, 0, 15, frame.size.height))
+        leftView = paddingView
+        leftViewMode = UITextField.ViewMode.always
+    }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

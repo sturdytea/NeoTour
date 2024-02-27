@@ -21,11 +21,24 @@ class MainViewController: UIViewController {
         
         title = "Discover"
         
+        if let navigationController = navigationController {
+            let largeTitleFont = UIFont.customFont(.black, size: 32)
+            navigationController.navigationBar.largeTitleTextAttributes = [
+                NSAttributedString.Key.font: largeTitleFont ,
+                NSAttributedString.Key.foregroundColor: UIColor.black
+            ]
+            navigationController.navigationBar.prefersLargeTitles = true
+            navigationItem.setHidesBackButton(true, animated: false)
+            navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+            navigationController.interactivePopGestureRecognizer?.isEnabled = false
+
+        }
+        
         // TODO: Establish Font: UIFont(name: "SFProDisplay-Heavy", size: 32)
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.setHidesBackButton(true, animated: false)
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+//        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationItem.setHidesBackButton(true, animated: false)
+//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+//        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
 //        callToViewModelForUpdate()
     }

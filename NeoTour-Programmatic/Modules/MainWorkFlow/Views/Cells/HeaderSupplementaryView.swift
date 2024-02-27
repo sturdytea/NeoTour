@@ -11,7 +11,7 @@ class HeaderSupplementaryView: UICollectionReusableView {
     
     private let headerLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "SFProDisplay-Heavy", size: 20)
+        label.font = UIFont.customFont(.heavy, size: 20)
         label.translatesAutoresizingMaskIntoConstraints = false
         
         return label
