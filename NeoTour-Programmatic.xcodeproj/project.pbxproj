@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B89068232B8E136B00DEECBD /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89068222B8E136B00DEECBD /* ListItem.swift */; };
 		B8EB519F2B834FCF001C7B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB519E2B834FCF001C7B73 /* AppDelegate.swift */; };
 		B8EB51A32B834FCF001C7B73 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB51A22B834FCF001C7B73 /* OnboardingViewController.swift */; };
 		B8EB51A82B834FD1001C7B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8EB51A72B834FD1001C7B73 /* Assets.xcassets */; };
@@ -26,7 +27,6 @@
 		B8EB52242B83B6EA001C7B73 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52232B83B6EA001C7B73 /* MainViewController.swift */; };
 		B8EB52262B83BC12001C7B73 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52252B83BC12001C7B73 /* MainView.swift */; };
 		B8EB522A2B83C2C9001C7B73 /* ListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52292B83C2C9001C7B73 /* ListSection.swift */; };
-		B8EB52302B83C436001C7B73 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB522F2B83C436001C7B73 /* ListItem.swift */; };
 		B8EB52322B83C5D1001C7B73 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52312B83C5D1001C7B73 /* MockData.swift */; };
 		B8EB52362B83CB4C001C7B73 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52352B83CB4C001C7B73 /* CategoryCollectionViewCell.swift */; };
 		B8EB52382B83CD27001C7B73 /* PlaceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EB52372B83CD27001C7B73 /* PlaceCollectionViewCell.swift */; };
@@ -52,6 +52,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B89068222B8E136B00DEECBD /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		B8EB519B2B834FCF001C7B73 /* NeoTour-Programmatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NeoTour-Programmatic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EB519E2B834FCF001C7B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8EB51A22B834FCF001C7B73 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		B8EB52232B83B6EA001C7B73 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B8EB52252B83BC12001C7B73 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B8EB52292B83C2C9001C7B73 /* ListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSection.swift; sourceTree = "<group>"; };
-		B8EB522F2B83C436001C7B73 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ListItem.swift; path = "NeoTour-Programmatic/Models/ListItem.swift"; sourceTree = SOURCE_ROOT; };
 		B8EB52312B83C5D1001C7B73 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		B8EB52352B83CB4C001C7B73 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B8EB52372B83CD27001C7B73 /* PlaceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +109,185 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B89068202B8E12B900DEECBD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB52312B83C5D1001C7B73 /* MockData.swift */,
+				B8EB52552B8A3E01001C7B73 /* Networking */,
+				B8EB51B22B8350FE001C7B73 /* Models */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B89068212B8E12C100DEECBD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				B89068342B8E16AA00DEECBD /* BookingWorkFlow */,
+				B89068262B8E13F500DEECBD /* PlaceDetailsWorkFlow */,
+				B89068252B8E13E600DEECBD /* MainWorkFlow */,
+				B89068242B8E13CE00DEECBD /* OnboardingWorkFlow */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		B89068242B8E13CE00DEECBD /* OnboardingWorkFlow */ = {
+			isa = PBXGroup;
+			children = (
+				B89068312B8E14C900DEECBD /* Views */,
+				B89068272B8E142C00DEECBD /* ViewControllers */,
+			);
+			path = OnboardingWorkFlow;
+			sourceTree = "<group>";
+		};
+		B89068252B8E13E600DEECBD /* MainWorkFlow */ = {
+			isa = PBXGroup;
+			children = (
+				B890682B2B8E144B00DEECBD /* Views */,
+				B890682A2B8E144400DEECBD /* ViewModel */,
+				B89068292B8E143F00DEECBD /* ViewControllers */,
+			);
+			path = MainWorkFlow;
+			sourceTree = "<group>";
+		};
+		B89068262B8E13F500DEECBD /* PlaceDetailsWorkFlow */ = {
+			isa = PBXGroup;
+			children = (
+				B890682E2B8E146A00DEECBD /* Views */,
+				B890682D2B8E146300DEECBD /* ViewModel */,
+				B890682C2B8E145E00DEECBD /* ViewControllers */,
+			);
+			path = PlaceDetailsWorkFlow;
+			sourceTree = "<group>";
+		};
+		B89068272B8E142C00DEECBD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB51A22B834FCF001C7B73 /* OnboardingViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B89068292B8E143F00DEECBD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB52232B83B6EA001C7B73 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B890682A2B8E144400DEECBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB52292B83C2C9001C7B73 /* ListSection.swift */,
+				B8EB52742B8AB7CC001C7B73 /* TourViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B890682B2B8E144B00DEECBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB52252B83BC12001C7B73 /* MainView.swift */,
+				B890682F2B8E148A00DEECBD /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B890682C2B8E145E00DEECBD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB523D2B84C405001C7B73 /* PlaceViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B890682D2B8E146300DEECBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B890682E2B8E146A00DEECBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB523F2B84C47D001C7B73 /* PlaceView.swift */,
+				B89068302B8E149000DEECBD /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B890682F2B8E148A00DEECBD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB523B2B83D6D1001C7B73 /* HeaderSupplementaryView.swift */,
+				B8EB52352B83CB4C001C7B73 /* CategoryCollectionViewCell.swift */,
+				B8EB52372B83CD27001C7B73 /* PlaceCollectionViewCell.swift */,
+				B8EB52392B83CD38001C7B73 /* RecommendedCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B89068302B8E149000DEECBD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB52452B85227D001C7B73 /* DescriptionTableViewCell.swift */,
+				B8EB52472B85228C001C7B73 /* ReviewsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B89068312B8E14C900DEECBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB51B62B835197001C7B73 /* OnboardingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B89068322B8E159400DEECBD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B89068332B8E159F00DEECBD /* CustomViews */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B89068332B8E159F00DEECBD /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB521F2B83ADEE001C7B73 /* CustomPrimaryButton.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		B89068342B8E16AA00DEECBD /* BookingWorkFlow */ = {
+			isa = PBXGroup;
+			children = (
+				B89068362B8E16C600DEECBD /* Views */,
+				B89068352B8E16BD00DEECBD /* ViewControllers */,
+			);
+			path = BookingWorkFlow;
+			sourceTree = "<group>";
+		};
+		B89068352B8E16BD00DEECBD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB524B2B872FE0001C7B73 /* BottomSheetViewController.swift */,
+				B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B89068362B8E16C600DEECBD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */,
+				B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		B8EB51922B834FCF001C7B73 = {
 			isa = PBXGroup;
 			children = (
@@ -128,12 +307,10 @@
 		B8EB519D2B834FCF001C7B73 /* NeoTour-Programmatic */ = {
 			isa = PBXGroup;
 			children = (
-				B8EB52732B8A9991001C7B73 /* Service */,
+				B89068322B8E159400DEECBD /* Common */,
+				B89068202B8E12B900DEECBD /* Core */,
+				B89068212B8E12C100DEECBD /* Modules */,
 				B8EB51BC2B838CFD001C7B73 /* Fonts */,
-				B8EB51B22B8350FE001C7B73 /* Models */,
-				B8EB51B52B835125001C7B73 /* ViewModels */,
-				B8EB51B32B835107001C7B73 /* Views */,
-				B8EB51B42B835113001C7B73 /* ViewControllers */,
 				B8EB519E2B834FCF001C7B73 /* AppDelegate.swift */,
 				B8EB51A72B834FD1001C7B73 /* Assets.xcassets */,
 				B8EB51A92B834FD1001C7B73 /* LaunchScreen.storyboard */,
@@ -145,49 +322,13 @@
 		B8EB51B22B8350FE001C7B73 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B8EB522F2B83C436001C7B73 /* ListItem.swift */,
 				B8EB52412B8517F4001C7B73 /* Tour.swift */,
 				B8EB52432B85184E001C7B73 /* Review.swift */,
 				B8EB52672B8A91D3001C7B73 /* Category.swift */,
 				B8EB52692B8A91E9001C7B73 /* BookingRequest.swift */,
+				B89068222B8E136B00DEECBD /* ListItem.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		B8EB51B32B835107001C7B73 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				B8EB52332B83CB21001C7B73 /* Cells */,
-				B8EB521E2B83ADD0001C7B73 /* Buttons */,
-				B8EB51B62B835197001C7B73 /* OnboardingView.swift */,
-				B8EB52252B83BC12001C7B73 /* MainView.swift */,
-				B8EB523F2B84C47D001C7B73 /* PlaceView.swift */,
-				B8EB524D2B8734A7001C7B73 /* BottomSheetView.swift */,
-				B8EB52512B8A28F9001C7B73 /* ModalPopupView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B8EB51B42B835113001C7B73 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				B8EB51A22B834FCF001C7B73 /* OnboardingViewController.swift */,
-				B8EB52232B83B6EA001C7B73 /* MainViewController.swift */,
-				B8EB523D2B84C405001C7B73 /* PlaceViewController.swift */,
-				B8EB524B2B872FE0001C7B73 /* BottomSheetViewController.swift */,
-				B8EB52532B8A2AA4001C7B73 /* ModalPopupViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		B8EB51B52B835125001C7B73 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				B8EB52292B83C2C9001C7B73 /* ListSection.swift */,
-				B8EB52312B83C5D1001C7B73 /* MockData.swift */,
-				B8EB52742B8AB7CC001C7B73 /* TourViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		B8EB51BC2B838CFD001C7B73 /* Fonts */ = {
@@ -215,27 +356,6 @@
 			path = "SF-Pro-Display";
 			sourceTree = "<group>";
 		};
-		B8EB521E2B83ADD0001C7B73 /* Buttons */ = {
-			isa = PBXGroup;
-			children = (
-				B8EB521F2B83ADEE001C7B73 /* CustomPrimaryButton.swift */,
-			);
-			path = Buttons;
-			sourceTree = "<group>";
-		};
-		B8EB52332B83CB21001C7B73 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				B8EB52352B83CB4C001C7B73 /* CategoryCollectionViewCell.swift */,
-				B8EB52372B83CD27001C7B73 /* PlaceCollectionViewCell.swift */,
-				B8EB52392B83CD38001C7B73 /* RecommendedCollectionViewCell.swift */,
-				B8EB523B2B83D6D1001C7B73 /* HeaderSupplementaryView.swift */,
-				B8EB52452B85227D001C7B73 /* DescriptionTableViewCell.swift */,
-				B8EB52472B85228C001C7B73 /* ReviewsTableViewCell.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
 		B8EB52552B8A3E01001C7B73 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,14 +365,6 @@
 				B8EB52712B8A972A001C7B73 /* NetworkServiceWithCompletions.swift */,
 			);
 			path = Networking;
-			sourceTree = "<group>";
-		};
-		B8EB52732B8A9991001C7B73 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				B8EB52552B8A3E01001C7B73 /* Networking */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B89068232B8E136B00DEECBD /* ListItem.swift in Sources */,
 				B8EB51A32B834FCF001C7B73 /* OnboardingViewController.swift in Sources */,
 				B8EB526C2B8A93E8001C7B73 /* NetworkError.swift in Sources */,
 				B8EB524C2B872FE0001C7B73 /* BottomSheetViewController.swift in Sources */,
@@ -347,7 +460,6 @@
 				B8EB523E2B84C405001C7B73 /* PlaceViewController.swift in Sources */,
 				B8EB526E2B8A9417001C7B73 /* EndPoint.swift in Sources */,
 				B8EB52682B8A91D3001C7B73 /* Category.swift in Sources */,
-				B8EB52302B83C436001C7B73 /* ListItem.swift in Sources */,
 				B8EB52542B8A2AA4001C7B73 /* ModalPopupViewController.swift in Sources */,
 				B8EB519F2B834FCF001C7B73 /* AppDelegate.swift in Sources */,
 				B8EB52242B83B6EA001C7B73 /* MainViewController.swift in Sources */,
